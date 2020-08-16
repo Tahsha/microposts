@@ -12,4 +12,4 @@
             </div>
         </div>
     @endif
-@endsectiongit 
+@endsection
