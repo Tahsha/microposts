@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
+
 
 class UserFollowController extends Controller
 {
@@ -28,8 +29,8 @@ class UserFollowController extends Controller
         return back();
     }
     
-    public function loadRelationshipCounts()
-    {
-        $this->loadCount(['microposts', 'followings', 'followers']);
-    }    
+    // public function loadRelationshipCounts()
+    // {
+    //     $this->loadCount(['microposts', 'followings', 'followers']);
+    // }    
 }

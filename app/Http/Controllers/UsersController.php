@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User; // 追加
+// use App\favorites;
 
 class UsersController extends Controller
 {
@@ -97,6 +98,25 @@ class UsersController extends Controller
             'users' => $followers,
         ]);
     }    
+        public function favorites($id)
+    {
+        
+        $user = User::findOrFail($id);
+
+        
+        $user->loadRelationshipCounts();
+
+        
+        $microposts = $user->favorites()->paginate(10);
+
+        return view('favorites.favorite', [
+            'user' => $user,
+            'microposts' => $microposts ,
+        ]);
+    }
+
+
+        
     
 }
     
